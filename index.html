@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visão & Tecnociência - Acessibilidade, Olho Humano e Inovação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra Superior de Acessibilidade -->
+    <header class="barra-acessibilidade" role="region" aria-label="Ferramentas de Acessibilidade">
+        <div class="container flex-acessibilidade">
+            <span class="titulo-acess"><strong>Acessibilidade:</strong></span>
+            <button id="btn-contraste" onclick="alternarContraste()" aria-pressed="false">🌓 Alto Contraste</button>
+            <button onclick="alterarFonte(1)">A+ Aumentar Texto</button>
+            <button onclick="alterarFonte(-1)">A- Diminuir Texto</button>
+            <button onclick="alternarEspacamento()">↔️ Espaçamento de Leitura</button>
+            <button id="btn-ler-tudo" onclick="lerPagina()">🔊 Ler Página em Voz Alta</button>
+            <button onclick="pararLeitura()">⏹️ Parar Leitura</button>
+            <button onclick="resetarAcessibilidade()">🔄 Padrão</button>
+        </div>
+    </header>
+
+    <!-- Cabeçalho Principal -->
+    <header class="cabecalho-principal">
+        <div class="container">
+            <h1>Visão, Física e Tecnociência</h1>
+            <p class="subtitulo">Entenda a anatomia do olho humano, o funcionamento dos óculos e como a programação e a robótica transformam a vida de pessoas com baixa visão.</p>
+            <nav aria-label="Menu Principal">
+                <ul class="menu">
+                    <li><a href="#olho-humano">O Olho Humano</a></li>
+                    <li><a href="#oculos">Composição dos Óculos</a></li>
+                    <li><a href="#fisica">Física e Óptica</a></li>
+                    <li><a href="#robotica">Robótica Assistiva</a></li>
+                    <li><a href="#programacao">Programação e Inclusão</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main id="conteudo-principal" class="container">
+
+        <!-- Seção 1: O Olho Humano -->
+        <section id="olho-humano" class="cartao-secao">
+            <div class="topo-secao">
+                <h2>1. Composição e Funcionamento do Olho Humano</h2>
+                <button class="btn-ouvir-secao" onclick="lerSecao('olho-humano')">🔊 Ouvir esta seção</button>
+            </div>
+            <p>O olho humano funciona como uma câmera biológica altamente complexa. Ele capta a luz refletida pelos objetos e a transforma em impulsos elétricos que o cérebro interpreta como imagens.</p>
+
+            <!-- Ilustração Vetorial Didática do Olho Humano -->
+            <figure class="ilustracao-box">
+                <svg viewBox="0 0 600 300" role="img" aria-label="Diagrama anatômico do olho humano mostrando córnea, pupila, íris, cristalino, retina e nervo óptico">
+                    <!-- Fundo -->
+                    <rect width="600" height="300" fill="transparent"/>
+                    <!-- Globo ocular -->
+                    <circle cx="300" cy="150" r="110" fill="#f8fafc" stroke="#1e293b" stroke-width="5"/>
+                    <!-- Retina (camada interna posterior) -->
+                    <path d="M 300 45 A 105 105 0 1 1 300 255" fill="none" stroke="#ef4444" stroke-width="8"/>
+                    <!-- Córnea (protuberância frontal) -->
+                    <path d="M 195 105 Q 155 150 195 195" fill="#bae6fd" fill-opacity="0.6" stroke="#0284c7" stroke-width="4"/>
+                    <!-- Íris superior e inferior -->
+                    <line x1="205" y1="95" x2="205" y2="128" stroke="#15803d" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="205" y1="172" x2="205" y2="205" stroke="#15803d" stroke-width="10" stroke-linecap="round"/>
+                    <!-- Cristalino (lente) -->
+                    <ellipse cx="230" cy="150" rx="14" ry="36" fill="#fef08a" stroke="#ca8a04" stroke-width="3"/>
+                    <!-- Nervo Óptico -->
+                    <path d="M 405 135 L 520 120 L 520 180 L 405 165 Z" fill="#fde047" stroke="#854d0e" stroke-width="3"/>
+                    
+                    <!-- Rótulos e linhas indicativas -->
+                    <text x="60" y="90" font-size="15" font-weight="bold" fill="currentColor">Córnea</text>
+                    <line x1="115" y1="86" x2="178" y2="125" stroke="currentColor" stroke-width="2"/>
+
+                    <text x="50" y="155" font-size="15" font-weight="bold" fill="currentColor">Pupila (abertura)</text>
+                    <line x1="175" y1="150" x2="205" y2="150" stroke="currentColor" stroke-width="2"/>
+
+                    <text x="60" y="220" font-size="15" font-weight="bold" fill="currentColor">Íris (cor)</text>
+                    <line x1="125" y1="215" x2="202" y2="190" stroke="currentColor" stroke-width="2"/>
+
+                    <text x="200" y="25" font-size="15" font-weight="bold" fill="currentColor">Cristalino (Lente)</text>
+                    <line x1="245" y1="32" x2="230" y2="112" stroke="currentColor" stroke-width="2"/>
+
+                    <text x="360" y="35" font-size="15" font-weight="bold" fill="#dc2626">Retina</text>
+                    <line x1="365" y1="42" x2="345" y2="62" stroke="#dc2626" stroke-width="2"/>
+
+                    <text x="450" y="105" font-size="15" font-weight="bold" fill="currentColor">Nervo Óptico</text>
+                </svg>
+                <figcaption>Figura 1: Principais estruturas ópticas e neurais do olho humano.</figcaption>
+            </figure>
+
+            <div class="grade-cards">
+                <article class="item-card">
+                    <h3>Córnea</h3>
+                    <p>É a camada transparente na frente do olho. Ela protege o globo ocular e realiza a maior parte da refração (desvio) da luz que entra.</p>
+                </article>
+                <article class="item-card">
+                    <h3>Íris e Pupila</h3>
+                    <p>A <strong>íris</strong> é a parte colorida que controla o tamanho da <strong>pupila</strong> (o círculo preto central), regulando a quantidade de luz que entra no olho.</p>
+                </article>
+                <article class="item-card">
+                    <h3>Cristalino</h3>
+                    <p>Funciona como uma lente natural flexível. Ele muda de formato para ajustar o foco de objetos próximos ou distantes (acomodação visual).</p>
+                </article>
+                <article class="item-card">
+                    <h3>Retina</h3>
+                    <p>Tecido sensível à luz no fundo do olho. Possui células chamadas <strong>cones</strong> (cores e detalhes) e <strong>bastonetes</strong> (visão noturna e periférica).</p>
+                </article>
+                <article class="item-card">
+                    <h3>Nervo Óptico</h3>
+                    <p>É o cabo de transmissão biológico. Ele leva os sinais elétricos gerados na retina diretamente até o córtex visual no cérebro.</p>
+                </article>
+                <article class="item-card">
+                    <h3>Esclera e Humor Vítreo</h3>
+                    <p>A <strong>esclera</strong> é a parte branca resistente que protege o olho. O <strong>humor vítreo</strong> é um gel transparente que mantém o formato esférico do olho.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção 2: Composição dos Óculos -->
+        <section id="oculos" class="cartao-secao">
+            <div class="topo-secao">
+                <h2>2. Composição e Partes dos Óculos</h2>
+                <button class="btn-ouvir-secao" onclick="lerSecao('oculos')">🔊 Ouvir esta seção</button>
+            </div>
+            <p>Os óculos são dispositivos ópticos externos projetados para corrigir erros de refração (como miopia, hipermetropia e astigmatismo) e proteger os olhos.</p>
+
+            <!-- Ilustração Vetorial dos Óculos -->
+            <figure class="ilustracao-box">
+                <svg viewBox="0 0 600 220" role="img" aria-label="Diagrama das partes de um óculos mostrando aro, lentes, ponte, plaquetas e hastes">
+                    <!-- Aro Esquerdo -->
+                    <rect x="130" y="70" width="130" height="80" rx="18" fill="#e0f2fe" stroke="#0f172a" stroke-width="6"/>
+                    <!-- Aro Direito -->
+                    <rect x="340" y="70" width="130" height="80" rx="18" fill="#e0f2fe" stroke="#0f172a" stroke-width="6"/>
+                    <!-- Ponte -->
+                    <path d="M 260 100 Q 300 85 340 100" fill="none" stroke="#0f172a" stroke-width="6"/>
+                    <!-- Plaquetas -->
+                    <ellipse cx="272" cy="115" rx="5" ry="12" fill="#64748b"/>
+                    <ellipse cx="328" cy="115" rx="5" ry="12" fill="#64748b"/>
+                    <!-- Hastes -->
+                    <line x1="130" y1="95" x2="50" y2="65" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                    <line x1="470" y1="95" x2="550" y2="65" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+
+                    <!-- Textos -->
+                    <text x="165" y="115" font-size="15" font-weight="bold" fill="#0f172a">Lente</text>
+                    <text x="278" y="65" font-size="15" font-weight="bold" fill="currentColor">Ponte</text>
+                    <text x="265" y="165" font-size="15" font-weight="bold" fill="currentColor">Plaquetas</text>
+                    <text x="25" y="50" font-size="15" font-weight="bold" fill="currentColor">Haste</text>
+                    <text x="380" y="180" font-size="15" font-weight="bold" fill="currentColor">Aro (Armação)</text>
+                    <line x1="410" y1="165" x2="410" y2="150" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <figcaption>Figura 2: Componentes estruturais e ópticos de um par de óculos.</figcaption>
+            </figure>
+
+            <ul class="lista-detalhada">
+    <script src="script.js"></script>
+</body>
+</html>
+            <!-- SEÇÃO 6: GALERIA DE FOTOS DO PROJETO -->
+        <section id="galeria" class="cartao-secao">
+            <div class="topo-secao">
+                <h2>6. Galeria do Projeto e Registros</h2>
+                <button type="button" class="btn-ouvir-secao" onclick="lerSecao('galeria')">🔊 Ouvir esta seção</button>
+            </div>
+            <p>Confira abaixo os registros visuais, experimentos e demonstrações práticas sobre visão e tecnologia.</p>
+
+            <div class="grade-galeria">
+                <!-- Foto 1 -->
+                <figure class="card-foto">
+                    <img src="img/img01.jpg" alt="Registro fotográfico 1 do projeto sobre visão e tecnologia">
+                    <figcaption>Registro 1: Demonstração prática do projeto.</figcaption>
+                </figure>
+
+                <!-- Foto 2 -->
+                <figure class="card-foto">
+                    <img src="img/img02.jpg" alt="Registro fotográfico 2 do projeto sobre visão e tecnologia">
+                    <figcaption>Registro 2: Estudo visual e equipamentos ópticos.</figcaption>
+                </figure>
+
+                <!-- Foto 3 -->
+                <figure class="card-foto">
+                    <img src="img/img03.jpg" alt="Registro fotográfico 3 do projeto sobre visão e tecnologia">
+                    <figcaption>Registro 3: Apresentação dos resultados da pesquisa.</figcaption>
+                </figure>
+            </div>
+        </section>
